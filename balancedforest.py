@@ -128,7 +128,7 @@ class Graph(object):
                 tree2_nodes = []
                 tree1_total, tree2_total = self.split_and_compute_tree_sum(tree1_nodes, tree2_nodes, edge)
                 print("ORIGINALS: ", tree1_total, tree2_total)
-                if(min(tree1_total, tree2_total) < (tree1_total+tree2_total)/3):
+                if(min(tree1_total, tree2_total) < self.grand_sum/3 or (max(tree1_total, tree2_total) > (2*self.grand_sum)/3)):
                     n = n.next
                     continue
 
